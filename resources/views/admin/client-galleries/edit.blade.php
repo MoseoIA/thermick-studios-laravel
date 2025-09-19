@@ -77,6 +77,7 @@
         <h3 class="text-lg font-semibold mb-4">Agregar Foto</h3>
         <form action="{{ route('client-galleries.update', $clientGallery) }}" method="POST" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-3 gap-4">
             @csrf
+            @method('PUT')
             <input type="hidden" name="action" value="add_photo">
             <input type="file" name="photo" id="photo" accept="image/*" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
             <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
@@ -89,6 +90,7 @@
         <h3 class="text-lg font-semibold mb-4">Agregar Video</h3>
         <form action="{{ route('client-galleries.update', $clientGallery) }}" method="POST" class="grid grid-cols-1 md:grid-cols-3 gap-4">
             @csrf
+            @method('PUT')
             <input type="hidden" name="action" value="add_video">
             <input type="url" name="video_url" id="video_url" placeholder="URL de Google Drive" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
             <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
@@ -115,6 +117,7 @@
                         @endif
                         <form action="{{ route('client-galleries.update', $clientGallery) }}" method="POST" class="inline">
                             @csrf
+                            @method('PUT')
                             <input type="hidden" name="action" value="delete_item">
                             <input type="hidden" name="item_id" value="{{ $item->id }}">
                             <button type="submit" class="bg-red-500 hover:bg-red-700 text-white py-1 px-3 rounded text-sm" onclick="return confirm('¿Estás seguro de eliminar este elemento?')">
