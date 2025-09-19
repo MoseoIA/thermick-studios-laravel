@@ -23,4 +23,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('testimonials', TestimonialController::class);
     Route::resource('portfolio-categories', PortfolioCategoryController::class);
     Route::resource('portfolio-projects', PortfolioProjectController::class);
+    Route::resource('client-galleries', ClientGalleryController::class);
+    Route::resource('client-galleries', ClientGalleryController::class);
 });

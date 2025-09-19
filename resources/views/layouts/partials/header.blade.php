@@ -1,4 +1,4 @@
-<header x-data="{ scrolled: false }" x-init="$watch('scroll', () => scrolled = window.scrollY > 0)" class="fixed w-full bg-white/80 backdrop-blur-md z-50 shadow-lg transition-all duration-300" :class="scrolled ? 'bg-white/95' : 'bg-white/80'">
+<header x-data="{ scrolled: false }" x-init="$watch('scroll', () => scrolled = window.scrollY > 0)" class="fixed w-full bg-primary/80 backdrop-blur-md z-50 shadow-lg transition-all duration-300" :class="scrolled ? 'bg-primary/95' : 'bg-primary/80'">
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex justify-between items-center py-4">
             <!-- Logo -->

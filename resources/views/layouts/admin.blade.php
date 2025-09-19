@@ -27,6 +27,9 @@
                 <a href="{{ route('portfolio-projects.index') }}" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
                     <span class="ml-3">Portafolio</span>
                 </a>
+                <a href="{{ route('client-galleries.index') }}" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                    <span class="ml-3">Galerías de Clientes</span>
+                </a>
                 <a href="{{ route('portfolio-projects.index') }}" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
                     <span class="ml-3">Proyectos de Portafolio</span>
                 </a>
