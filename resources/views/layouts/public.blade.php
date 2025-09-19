@@ -13,9 +13,8 @@
     
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
 </head>
-<body class="bg-[#111111] text-[#F5F5F5]">
+<body class="bg-primary text-light-text font-sans antialiased">
     @include('layouts.partials.header')
 
     <main>

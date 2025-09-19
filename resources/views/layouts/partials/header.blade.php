@@ -8,19 +8,19 @@
                     <path d="M2 17L12 22L22 17L12 12L2 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M12 22V12L2 7V17L12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span class="ml-2 text-xl font-bold text-gray-900">Thermick Studios</span>
+                <span class="font-serif ml-2 text-xl font-bold text-primary">Thermick Studios</span>
             </div>
 
             <!-- Navigation -->
             <nav class="hidden md:flex space-x-6">
-                <a href="{{ route('home') }}" class="text-gray-700 hover:text-blue-600">Inicio</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600">Portafolio</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600">Sobre Mí</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600">Contacto</a>
+                <a href="{{ route('home') }}" class="font-sans text-light-text hover:text-accent">Inicio</a>
+                <a href="#" class="font-sans text-light-text hover:text-accent">Portafolio</a>
+                <a href="#" class="font-sans text-light-text hover:text-accent">Sobre Mí</a>
+                <a href="#" class="font-sans text-light-text hover:text-accent">Contacto</a>
             </nav>
 
             <!-- Cotizar Evento Button -->
-            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-semibold">
+            <a href="#" class="bg-accent hover:bg-accent-dark text-primary px-4 py-2 rounded-md font-semibold">
                 Cotizar Evento
             </a>
         </div>
