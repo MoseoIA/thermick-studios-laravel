@@ -10,16 +10,11 @@ class ClientGallery extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'slug', 'password', 'cover_image_path', 'event_date'
-    ];
-
-    protected $casts = [
-        'event_date' => 'date',
-        'password' => 'hashed',
+        'title', 'slug', 'password', 'cover_image_path'
     ];
 
     public function items()
     {
-        return $this->hasMany(GalleryItem::class)->orderBy('order');
+        return $this->hasMany(GalleryItem::class);
     }
 }
