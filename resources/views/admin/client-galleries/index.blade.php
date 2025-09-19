@@ -36,7 +36,6 @@
                         @endif
                     </td>
                     <td class="py-2 px-4 border-b">
-                        <a href="{{ route('client-galleries.show', $gallery) }}" class="bg-green-500 hover:bg-green-700 text-white py-1 px-3 rounded text-sm mr-2">Ver</a>
                         <a href="{{ route('client-galleries.edit', $gallery) }}" class="bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-3 rounded text-sm mr-2">Editar</a>
                         <form action="{{ route('client-galleries.destroy', $gallery) }}" method="POST" class="inline" onsubmit="return confirm('¿Estás seguro?')">
                             @csrf

@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\PortfolioCategoryController;
 use App\Http\Controllers\Admin\PortfolioProjectController;
-use App\Http\Controllers\Admin\ClientGalleryController; // Línea que faltaba
+use App\Http\Controllers\Admin\ClientGalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +27,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('testimonials', TestimonialController::class);
     Route::resource('portfolio-categories', PortfolioCategoryController::class);
     Route::resource('portfolio-projects', PortfolioProjectController::class);
-    Route::resource('client-galleries', ClientGalleryController::class); // Línea duplicada eliminada
+
+    // Rutas para Galerías de Clientes
+    Route::post('client-galleries/{clientGallery}/add-photos', [ClientGalleryController::class, 'addPhotos'])->name('client-galleries.addPhotos');
+    Route::resource('client-galleries', ClientGalleryController::class)->except(['show']);
 });
 
 require __DIR__.'/auth.php';

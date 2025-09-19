@@ -49,12 +49,6 @@ class ClientGalleryController extends Controller
         return redirect()->route('client-galleries.index')->with('success', 'Galería creada exitosamente.');
     }
 
-    public function show(ClientGallery $clientGallery)
-    {
-        $clientGallery->load('items');
-        return view('admin.client-galleries.show', compact('clientGallery'));
-    }
-
     public function edit(ClientGallery $clientGallery)
     {
         $clientGallery->load('items');
@@ -64,23 +58,6 @@ class ClientGalleryController extends Controller
     public function update(Request $request, ClientGallery $clientGallery)
     {
         $action = $request->input('action', 'update');
-
-        if ($action === 'add_photo') {
-            $validated = $request->validate([
-                'photo' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
-            ]);
-
-            $path = $request->file('photo')->store('client_galleries/photos', 'public');
-            $order = $clientGallery->items()->max('order') ? $clientGallery->items()->max('order') + 1 : 1;
-
-            $clientGallery->items()->create([
-                'type' => 'photo',
-                'path_or_url' => $path,
-                'order' => $order,
-            ]);
-
-            return redirect()->route('client-galleries.edit', $clientGallery)->with('success', 'Foto agregada exitosamente.');
-        }
 
         if ($action === 'add_video') {
             $validated = $request->validate([
@@ -137,6 +114,28 @@ class ClientGalleryController extends Controller
         ]);
 
         return redirect()->route('client-galleries.index')->with('success', 'Galería actualizada exitosamente.');
+    }
+
+    public function addPhotos(Request $request, ClientGallery $clientGallery)
+    {
+        $request->validate([
+            'photos' => 'required',
+            'photos.*' => 'image|mimes:jpg,jpeg,png,webp|max:2048'
+        ]);
+
+        if ($request->hasFile('photos')) {
+            $maxOrder = $clientGallery->items()->max('order') ?? 0;
+            foreach ($request->file('photos') as $photo) {
+                $path = $photo->store('client_galleries/photos', 'public');
+                $clientGallery->items()->create([
+                    'type' => 'photo',
+                    'path_or_url' => $path,
+                    'order' => ++$maxOrder,
+                ]);
+            }
+        }
+
+        return redirect()->route('client-galleries.edit', $clientGallery)->with('success', 'Fotos añadidas exitosamente.');
     }
 
     public function destroy(ClientGallery $clientGallery)
