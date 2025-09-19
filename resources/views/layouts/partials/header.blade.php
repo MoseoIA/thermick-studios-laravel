@@ -1,9 +1,13 @@
-<header class="fixed w-full bg-white/80 backdrop-blur-md z-50 shadow-lg">
+<header x-data="{ scrolled: false }" x-init="$watch('scroll', () => scrolled = window.scrollY > 0)" class="fixed w-full bg-white/80 backdrop-blur-md z-50 shadow-lg transition-all duration-300" :class="scrolled ? 'bg-white/95' : 'bg-white/80'">
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex justify-between items-center py-4">
             <!-- Logo -->
             <div class="flex items-center">
-                <img src="{{ asset('images/logo.png') }}" alt="Thermick Studios" class="h-8 w-auto">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17L12 12L2 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 22V12L2 7V17L12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
                 <span class="ml-2 text-xl font-bold text-gray-900">Thermick Studios</span>
             </div>
 
@@ -22,3 +26,5 @@
         </div>
     </div>
 </header>
+
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>

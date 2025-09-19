@@ -9,13 +9,13 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Cormorant+Garamond:400,700|Monserrat:400,600" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=Cormorant+Garamond:400,700|Montserrat:400,600" rel="stylesheet" />
     
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
-<body class="font-sans antialiased">
+<body class="bg-[#111111] text-[#F5F5F5]">
     @include('layouts.partials.header')
 
     <main>

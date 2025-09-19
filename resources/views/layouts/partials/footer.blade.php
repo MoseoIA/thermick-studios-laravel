@@ -3,7 +3,11 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Column 1: Logo and Tagline -->
             <div class="text-center md:text-left">
-                <img src="{{ asset('images/logo.png') }}" alt="Thermick Studios" class="h-12 w-auto mb-4 mx-auto md:mx-0">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto md:mx-0 mb-4">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17L12 12L2 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 22V12L2 7V17L12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
                 <p class="text-gray-300 mb-4">Capturando momentos inolvidables con pasión y creatividad.</p>
             </div>
 
@@ -25,8 +29,8 @@
                 <p class="text-gray-300 mb-4">+52 55 1234 5678</p>
                 <div class="flex space-x-4">
                     <a href="#" class="text-white hover:text-blue-400">Facebook</a>
-                    <li><a href="#" class="text-white hover:text-blue-400">Instagram</a></li>
-                    <li><a href="#" class="text-white hover:text-blue-400">Twitter</a></li>
+                    <a href="#" class="text-white hover:text-blue-400">Instagram</a>
+                    <a href="#" class="text-white hover:text-blue-400">Twitter</a>
                 </div>
             </div>
         </div>

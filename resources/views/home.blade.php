@@ -16,9 +16,9 @@
         <h2 class="text-3xl font-bold text-center mb-12">Nuestro Trabajo</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             @foreach($projects as $project)
-                <a href="#" class="block text-center">
+                <a href="#" class="block">
                     <img src="{{ Storage::url($project->cover_image_path) }}" alt="{{ $project->title }}" class="w-full h-64 object-cover rounded-lg mb-4">
-                    <h3 class="text-xl font-semibold">{{ $project->title }}</h3>
+                    <h3 class="text-xl font-semibold text-center">{{ $project->title }}</h3>
                 </a>
             @endforeach
         </div>
@@ -28,10 +28,10 @@
 <!-- About Me Teaser Section -->
 <section class="py-16 bg-gray-100">
     <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div>
-            <img src="#" alt="About Me" class="w-full h-64 object-cover rounded-lg">
+        <div class="md:order-2">
+            <img src="https://via.placeholder.com/600x400" alt="About Me" class="w-full h-64 object-cover rounded-lg">
         </div>
-        <div>
+        <div class="md:order-1">
             <h2 class="text-3xl font-bold mb-4">Sobre Thermick Studios</h2>
             <p class="text-lg text-gray-700">Somos un equipo apasionado por la fotografía, dedicados a capturar tus momentos más importantes con estilo y profesionalismo.</p>
         </div>
